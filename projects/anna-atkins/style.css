@@ -1,0 +1,60 @@
+/* Anna Atkins — project-specific styles.
+   Shared graphic design styles live in ../project-gd.css */
+
+/* Cyanotype-tinted dark sections */
+:root {
+  --gd-dark: #12232e;
+}
+
+/* Pull quote in the Concept section */
+.quote {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.7;
+  border-left: 3px solid rgba(0, 0, 0, 0.15);
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* Reference works grid — portrait images in a paper/print frame */
+.reference-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.reference-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reference-img-wrap {
+  background: #1a3a5c;
+  border-radius: 4px;
+  padding: 10px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reference-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.reference-item span {
+  font-size: 12px;
+  color: var(--color-secondary);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.reference-item em {
+  font-style: italic;
+}

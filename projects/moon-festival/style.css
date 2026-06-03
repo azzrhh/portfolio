@@ -1,0 +1,33 @@
+/* Moon Festival — project-specific overrides only.
+   All shared graphic design styles live in ../project-gd.css */
+
+/* Photo credits list */
+.photo-credits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.photo-credits li {
+  font-size: 13px;
+  color: var(--color-secondary);
+  line-height: 1.5;
+}
+
+.photo-credits li span {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.photo-credits a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.photo-credits a:hover {
+  color: var(--color-text);
+}

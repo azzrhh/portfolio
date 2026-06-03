@@ -1,0 +1,244 @@
+/* Utopia/Dystopia — project-specific styles
+   Base: ../../style.css + ../project.css */
+
+/* Cover: keep natural aspect ratio of the screenshot */
+.ud-cover img {
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #000;
+  border-radius: 0;
+}
+
+/* ── Design lenses list ── */
+.lens-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lens-item {
+  border-left: 2px solid rgba(0, 0, 0, 0.12);
+  padding-left: 16px;
+}
+
+.lens-item dt {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.lens-item dd {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.65;
+}
+
+/* ── How It Works flow ── */
+.flow-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.flow-step {
+  flex: 1;
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flow-step h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.flow-step p {
+  font-size: 13px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+.flow-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  color: var(--color-secondary);
+  opacity: 0.4;
+}
+
+.flow-arrow {
+  flex-shrink: 0;
+  padding: 0 12px;
+  color: var(--color-secondary);
+  opacity: 0.3;
+  font-size: 20px;
+  margin-top: 36px;
+}
+
+/* ── Scenarios grid ── */
+.scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.scenario-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scenario-header h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.scenario-setup {
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-style: italic;
+  line-height: 1.6;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  padding-left: 12px;
+}
+
+.scenario-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.choice {
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.choice-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.choice p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-secondary);
+}
+
+.choice-outcome {
+  font-style: italic;
+  font-size: 12px !important;
+  opacity: 0.8;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.choice-utopia {
+  background: rgba(76, 175, 80, 0.08);
+  border: 1px solid rgba(76, 175, 80, 0.25);
+}
+
+.choice-utopia .choice-label {
+  color: #2e7d32;
+}
+
+.choice-dystopia {
+  background: rgba(229, 57, 53, 0.06);
+  border: 1px solid rgba(229, 57, 53, 0.2);
+}
+
+.choice-dystopia .choice-label {
+  color: #c62828;
+}
+
+/* ── Future illustrations ── */
+.illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.illustration-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.illustration-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 12px;
+}
+
+.illustration-item span {
+  font-size: 12px;
+  color: var(--color-secondary);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── CTA section ── */
+.ud-cta {
+  background: #0a0a0a;
+  padding: 100px 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.ud-cta-inner {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.ud-cta-inner h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.05em;
+}
+
+.ud-cta-inner h2 span {
+  color: #e07060;
+}
+
+.ud-cta-inner p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+}
+
+.ud-play-btn {
+  background: #e07060;
+  color: #fff;
+  border: 1.5px solid #e07060;
+  font-size: 15px;
+  padding: 14px 32px;
+}
+
+.ud-play-btn:hover {
+  opacity: 0.85;
+}

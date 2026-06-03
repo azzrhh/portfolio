@@ -1,0 +1,652 @@
+/* ============================================================
+   Design Tokens
+   ============================================================ */
+:root {
+  --bg:        #F2EEE6;
+  --bg-2:      #ECE6DA;
+  --ink:       #1b1713;
+  --ink-2:     #46403a;
+  --muted:     #6c655b;
+  --line:      #cfc8ba;
+  --rose:      #c06b4e;
+  --rose-deep: #a4543b;
+  --card:      #E9E2D4;
+  --maxw:      1280px;
+  --pad:       66px;
+
+  /* Backwards-compat aliases — used by about.html + project pages */
+  --color-text:      #1b1713;
+  --color-secondary: #6c655b;
+  --color-bg:        #F2EEE6;
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.section { padding: 96px 0; }
+
+/* ============================================================
+   Nav / Header
+   ============================================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(242, 238, 230, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+header.scrolled { border-bottom-color: var(--line); }
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.brand {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  transition: opacity 0.15s ease;
+}
+
+.brand:hover { opacity: 0.7; }
+
+.navlinks {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  font-size: 16px;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+.navlinks a { transition: color 0.15s ease; }
+.navlinks a:hover { color: var(--ink); }
+
+.navlinks .btn-sm {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.navlinks .btn-sm:hover { background: var(--rose-deep); color: var(--bg); }
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 100px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 16px 30px;
+}
+.btn-primary:hover { background: var(--rose-deep); }
+
+.btn-ghost {
+  color: var(--ink);
+  padding: 15px 29px;
+  border: 1.5px solid var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--bg); }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.meta-rule {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.meta-rule .avail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #3a9d5d;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.hero-stage {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 48px;
+  padding-top: 40px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: clamp(58px, 10.2vw, 150px);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.hero h1 .rose { color: var(--rose); }
+
+.leftcol {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.tagline {
+  font-size: 21px;
+  color: var(--ink-2);
+  max-width: 460px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sidecol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+  padding-bottom: 14px;
+  text-align: right;
+}
+
+.sidecol .num {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--rose);
+}
+
+.sidecol .place {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2a251f;
+}
+
+.sidecol .small {
+  font-size: 13.5px;
+  color: var(--muted);
+  max-width: 210px;
+  line-height: 1.45;
+}
+
+/* ============================================================
+   Section headings
+   ============================================================ */
+.sec-eyebrow {
+  font-size: 13.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.sec-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: clamp(34px, 4.4vw, 58px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 44px;
+}
+
+.sec-note {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+/* Used on project + about pages for section titles */
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  color: var(--muted);
+}
+
+.section-label--light {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================================
+   Work / Project grid
+   ============================================================ */
+.work { border-top: 1px solid var(--line); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card .thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card:hover .thumb {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px -28px rgba(40, 30, 20, 0.5);
+}
+
+.card .badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: rgba(242, 238, 230, 0.86);
+  padding: 7px 13px;
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.card .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 20px;
+  gap: 16px;
+}
+
+.card .meta .t {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.card .meta .arrow {
+  font-size: 20px;
+  color: var(--muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.card:hover .meta .arrow {
+  transform: translate(3px, -3px);
+  color: var(--rose);
+}
+
+.card .desc {
+  font-size: 15.5px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+/* ============================================================
+   Contact — dark rounded panel
+   ============================================================ */
+.contact {
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 28px;
+  margin: 0 var(--pad) 28px;
+}
+
+.contact-inner {
+  padding: 84px 64px;
+}
+
+.contact .sec-eyebrow { color: #e3a182; margin-bottom: 20px; }
+
+.contact h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, 86px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin: 0 0 36px;
+}
+
+.contact h2 .rose { color: #e3a182; }
+
+.contact .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact .email {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--bg);
+  border-bottom: 2px solid #4a443c;
+  padding-bottom: 6px;
+  transition: border-color 0.2s ease;
+  display: inline-block;
+}
+
+.contact .email:hover { border-color: #e3a182; }
+
+.contact .btn-light {
+  background: var(--bg);
+  color: var(--ink);
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.contact .btn-light:hover { background: #e3a182; }
+
+.contact .socials {
+  display: flex;
+  gap: 26px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #c8bcab;
+  margin-top: 28px;
+}
+
+.contact .socials a { transition: color 0.15s ease; }
+.contact .socials a:hover { color: var(--bg); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer { padding: 40px 0 56px; }
+
+.foot-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.foot-inner .brand-sm {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.to-top {
+  font-weight: 600;
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.15s ease;
+}
+
+.to-top:hover { color: var(--rose); }
+
+/* ============================================================
+   About page
+   ============================================================ */
+.about-hero {
+  padding: 80px 48px 48px;
+}
+
+.about-hero h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.about-bio {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.about-skills {
+  padding: 64px 48px;
+  border-top: 1px solid var(--line);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.skill-group h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 16px;
+}
+
+.skill-group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-group li {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.about-education {
+  padding: 64px 48px;
+  border-top: 1px solid var(--line);
+}
+
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.education-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.education-degree {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.education-school {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.education-year {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Pill badge — used on project pages + about.html */
+.hero-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.07);
+  color: var(--muted);
+  padding: 5px 13px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+/* Availability dot used on about.html */
+.hero-availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3a9d5d;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Responsive — 900 px breakpoint
+   ============================================================ */
+@media (max-width: 900px) {
+  :root { --pad: 28px; }
+
+  .navlinks { gap: 20px; }
+  .navlinks a:not(.btn-sm) { display: none; }
+
+  .hero-stage {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sidecol {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .sidecol .small { max-width: 320px; }
+
+  .grid { grid-template-columns: 1fr; }
+
+  .sec-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact {
+    margin: 0 28px 28px;
+    border-radius: 20px;
+  }
+
+  .contact-inner { padding: 56px 32px; }
+
+  .foot-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-hero { padding: 48px 28px 36px; }
+  .about-skills { padding: 48px 28px; }
+  .about-education { padding: 48px 28px; }
+  .skills-grid { grid-template-columns: 1fr; }
+}

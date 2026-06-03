@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Game of Pig — front-end development case study by Ruihong Zhou. A two-player browser dice game wrapped in a playful pig-face interface, built with vanilla HTML, CSS, and JavaScript." />
+    <title>Game On — Ruihong Zhou</title>
+    <link rel="icon" type="image/png" href="../../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../../images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../project.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="nav">
+      <div class="wrap nav-inner">
+        <a href="../../index.html" class="brand">Ruihong Zhou</a>
+        <nav class="navlinks">
+          <a href="../../index.html#work">Work</a>
+          <a href="../../about.html">About</a>
+          <a href="../../index.html#contact" class="btn-sm">Get in touch</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Back nav -->
+      <div class="project-back">
+        <a href="../../index.html#work">← All Work</a>
+      </div>
+
+      <!-- Project hero -->
+      <section class="project-hero">
+        <div class="project-badges">
+          <span class="hero-badge">Front-End Development</span>
+          <span class="hero-badge">Interactive Game</span>
+          <span class="hero-badge">HTML / CSS / JS</span>
+        </div>
+        <h2>The Game of Pig</h2>
+        <p>
+          A two-player browser dice game where rolling ones can ruin everything.
+          Built entirely with HTML, CSS, and vanilla JavaScript — and wrapped in
+          a playful pig face UI where every game element lives inside a nose, a
+          mouth, or a pair of eyes.
+        </p>
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <span class="meta-label">Role</span>
+            <span>Front-End Developer</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Tools</span>
+            <span>HTML, CSS, JavaScript</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Year</span>
+            <span>2025</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Published</span>
+            <span>GitHub Pages</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cover -->
+      <div class="project-cover">
+        <img
+          src="../../images/gameon-ingame.jpg"
+          alt="The Game of Pig — in-game screen"
+        />
+      </div>
+
+      <!-- Overview -->
+      <section class="case-section">
+        <h2 class="section-label">Overview</h2>
+        <div class="case-two-col">
+          <div>
+            <h3 class="case-heading">The Game</h3>
+            <p>
+              The Game of Pig is a classic two-player dice game. Players take
+              turns rolling two dice to accumulate points, but any roll that
+              shows a 1 ends your turn immediately — and rolling double ones
+              (Snake Eyes) wipes out your entire score. The first player to
+              reach 30 points wins.
+            </p>
+            <p>
+              The twist in this version: the entire interface is a pig face. The
+              dice live inside the pig's snout, the ROLL and PASS buttons are
+              its upper teeth, the player scores are the lower teeth, and a
+              drool drop shows the winning target. The face reacts to the game
+              state — hiding or revealing its features as you move from the
+              start screen into play.
+            </p>
+          </div>
+          <div>
+            <h3 class="case-heading">How to Play</h3>
+            <ol class="how-to-list">
+              <li>
+                <span class="step-num">1</span>
+                <div>
+                  <strong>Start</strong> — Press Start Game. A random player is
+                  chosen to go first.
+                </div>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <div>
+                  <strong>Roll</strong> — Both dice roll. If neither shows a 1,
+                  the sum is added to your score.
+                </div>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <div>
+                  <strong>Pass</strong> — Lock in your current points and hand
+                  the turn to your opponent.
+                </div>
+              </li>
+              <li>
+                <span class="step-num">4</span>
+                <div>
+                  <strong>Roll a 1</strong> — Your turn ends. No points gained
+                  this round.
+                </div>
+              </li>
+              <li>
+                <span class="step-num">5</span>
+                <div>
+                  <strong>Snake Eyes</strong> — Both dice show 1. You lose
+                  <em>all</em> your accumulated points.
+                </div>
+              </li>
+              <li>
+                <span class="step-num">6</span>
+                <div>
+                  <strong>Win</strong> — First player to reach 30 points wins.
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mechanics -->
+      <section class="case-section case-section--tinted">
+        <h2 class="section-label">Game Mechanics</h2>
+        <div class="mechanics-grid">
+          <div class="mechanic-card mechanic-good">
+            <h4>Roll</h4>
+            <p>
+              Roll two dice. Sum is added to the active player's score — as long
+              as neither die shows a 1.
+            </p>
+          </div>
+          <div class="mechanic-card mechanic-good">
+            <h4>Pass</h4>
+            <p>
+              End your turn voluntarily to lock in your points. A safe move when
+              you're ahead.
+            </p>
+          </div>
+          <div class="mechanic-card mechanic-risk">
+            <h4>Roll a 1</h4>
+            <p>
+              If either die lands on 1, your turn ends immediately. No points
+              scored this round.
+            </p>
+          </div>
+          <div class="mechanic-card mechanic-danger">
+            <h4>Snake Eyes</h4>
+            <p>
+              Both dice show 1. You lose every point you've earned. Total reset
+              — be careful.
+            </p>
+          </div>
+          <div class="mechanic-card mechanic-win">
+            <h4>First to 30</h4>
+            <p>
+              Reach 30 points before your opponent to win. A win sound plays and
+              the game locks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design process -->
+      <section class="case-section">
+        <h2 class="section-label">Design Process</h2>
+        <p class="case-intro">
+          The visual design went through three stages before a single line of
+          code was written: thumbnail sketches to explore concepts, a refined
+          detail sketch to nail the interaction model, and digital comps to
+          finalize both game states.
+        </p>
+
+        <div class="process-step">
+          <div class="process-step-label">
+            <span class="step-badge">01</span>
+            <h3 class="case-heading">Thumbnail Sketches</h3>
+            <p>
+              Five quick layout concepts explored different ways to organize two
+              players, two dice, and the action buttons. Options ranged from
+              score bars on a progress line, to stacked layouts, to the pig-face
+              concept that made the game elements part of a character.
+            </p>
+          </div>
+          <div class="process-step-img">
+            <img
+              src="../../images/gameon-thumbnails.jpg"
+              alt="5 thumbnail sketches for Game of Pig layout"
+            />
+          </div>
+        </div>
+
+        <div class="process-step process-step--reverse">
+          <div class="process-step-label">
+            <span class="step-badge">02</span>
+            <h3 class="case-heading">Chosen Concept & Detail Sketch</h3>
+            <p>
+              The pig-face layout was selected and developed into a more
+              detailed sketch. The dice sit in the snout, ROLL and PASS become
+              the upper teeth, player scores become the lower teeth, and a note
+              — <em>"Click, sound"</em> — flagged that button feedback and audio
+              were part of the design from the start.
+            </p>
+          </div>
+          <div class="process-step-img">
+            <img
+              src="../../images/gameon-sketch.jpg"
+              alt="Final concept sketch for Game of Pig with interaction notes"
+            />
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step-label">
+            <span class="step-badge">03</span>
+            <h3 class="case-heading">Digital Comps</h3>
+            <p>
+              Two states were comped digitally: the start screen (nose = "Start
+              Game" button, mouth showing 4 empty teeth) and the in-game screen
+              (nose = dice, upper teeth = ROLL/PASS, lower teeth = player
+              scores, drool = "First to 30 wins"). These became the spec for the
+              HTML/CSS implementation.
+            </p>
+          </div>
+          <div class="process-step-img process-step-img--two">
+            <img
+              src="../../images/gameon-start.jpg"
+              alt="Digital comp — start screen"
+            />
+            <img
+              src="../../images/gameon-ingame.jpg"
+              alt="Digital comp — in-game screen"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical implementation -->
+      <section class="case-section case-section--tinted">
+        <h2 class="section-label">Technical Implementation</h2>
+        <p class="case-intro">
+          The game is written in vanilla JavaScript — no libraries or
+          frameworks. Six key patterns make the implementation clean and
+          reliable.
+        </p>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>IIFE Pattern</h4>
+            <p>
+              The entire game is wrapped in an Immediately Invoked Function
+              Expression — keeping all variables and functions out of global
+              scope.
+            </p>
+          </div>
+          <div class="tech-card">
+            <h4>State Object</h4>
+            <p>
+              A single <code>gameData</code> object holds all state: dice
+              values, player scores, current turn index, and the winning
+              threshold.
+            </p>
+          </div>
+          <div class="tech-card">
+            <h4>Web Audio API</h4>
+            <p>
+              Button click sounds and a win fanfare play via the
+              <code>Audio</code> constructor. A mute toggle and opacity feedback
+              give users full control.
+            </p>
+          </div>
+          <div class="tech-card">
+            <h4>Event-Driven Logic</h4>
+            <p>
+              Each action — start, roll, pass, quit, restart, mute — is a
+              discrete event listener attached to its own handler function. No
+              tangled conditionals.
+            </p>
+          </div>
+          <div class="tech-card">
+            <h4>Progressive Disclosure</h4>
+            <p>
+              UI elements are hidden on load and revealed by JavaScript as the
+              game progresses through states: idle → playing → winner. The pig
+              face "comes alive."
+            </p>
+          </div>
+          <div class="tech-card">
+            <h4>SVG Assets</h4>
+            <p>
+              All face elements — dice faces, the nose, mouth, teeth, blush
+              marks — are SVGs. They scale perfectly at any viewport size with
+              no quality loss.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Play CTA -->
+      <section class="play-cta">
+        <div class="play-cta-inner">
+          <div class="play-cta-text">
+            <h2 class="section-label section-label--light">Play the Game</h2>
+            <p>
+              The game is live on GitHub Pages. Works in any modern browser — no
+              install needed.
+            </p>
+            <a
+              href="https://azzrhh.github.io/DES157a/gameon/v2/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary play-btn"
+            >Play Now →</a>
+          </div>
+          <div class="play-cta-img">
+            <img
+              src="../../images/gameon-ingame.jpg"
+              alt="The Game of Pig in-game screen"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot-inner">
+        <div class="brand-sm">Ruihong Zhou</div>
+        <div>© 2025 — Designed &amp; built in San Francisco</div>
+        <a href="../../index.html#top" class="to-top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script>
+      const nav = document.getElementById('nav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    </script>
+  </body>
+</html>

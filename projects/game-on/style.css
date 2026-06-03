@@ -1,0 +1,188 @@
+/* Game On — project-specific styles
+   Base layout from ../../style.css + ../project.css */
+
+/* How to Play list */
+.how-to-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.how-to-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.how-to-list strong {
+  font-weight: 600;
+}
+
+.how-to-list div {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+/* ── Mechanics cards ── */
+.mechanics-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.mechanic-card {
+  padding: 24px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 3px solid transparent;
+}
+
+.mechanic-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mechanic-card p {
+  font-size: 13px;
+  color: var(--color-secondary);
+  line-height: 1.55;
+}
+
+.mechanic-good {
+  background: rgba(255, 255, 255, 0.5);
+  border-top-color: #4caf50;
+}
+
+.mechanic-risk {
+  background: rgba(255, 255, 255, 0.5);
+  border-top-color: #ff9800;
+}
+
+.mechanic-danger {
+  background: rgba(255, 255, 255, 0.5);
+  border-top-color: #e53935;
+}
+
+.mechanic-win {
+  background: rgba(255, 255, 255, 0.5);
+  border-top-color: #1565c0;
+}
+
+/* ── Process steps ── */
+.process-step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.process-step--reverse {
+  direction: rtl;
+}
+
+.process-step--reverse > * {
+  direction: ltr;
+}
+
+.step-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  color: var(--color-secondary);
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+
+.process-step-img img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
+.process-step-img--two {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.process-step-label p {
+  font-size: 15px;
+  color: var(--color-secondary);
+  line-height: 1.75;
+  margin-top: 12px;
+}
+
+/* ── Play CTA section ── */
+.play-cta {
+  background: #1a1a1a;
+}
+
+.play-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.play-cta-text {
+  padding: 80px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.play-cta-text p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  max-width: 360px;
+}
+
+.play-btn {
+  align-self: flex-start;
+  background: white;
+  color: #1a1a1a;
+  border-color: white;
+  font-size: 15px;
+  padding: 12px 28px;
+}
+
+.play-btn:hover {
+  opacity: 0.85;
+}
+
+.play-cta-img {
+  height: 100%;
+  overflow: hidden;
+}
+
+.play-cta-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

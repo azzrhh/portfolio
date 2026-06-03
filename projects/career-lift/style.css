@@ -1,0 +1,12 @@
+/* Career-lift specific overrides — shared styles live in ../project.css */
+
+.figma-mockup {
+  margin-top: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.figma-mockup img {
+  width: 100%;
+  display: block;
+}

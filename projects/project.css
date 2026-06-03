@@ -1,0 +1,376 @@
+/* ─────────────────────────────────────────────
+   Shared styles for all project case study pages
+   Usage: link AFTER ../../style.css, BEFORE a
+   project-specific style.css
+───────────────────────────────────────────── */
+
+/* Back nav */
+.project-back {
+  padding: 24px 48px 0;
+}
+
+.project-back a {
+  font-size: 14px;
+  color: var(--color-secondary);
+  transition: opacity 0.2s ease;
+}
+
+.project-back a:hover {
+  opacity: 0.6;
+}
+
+/* Project hero */
+.project-hero {
+  padding: 48px 48px 64px;
+  max-width: 800px;
+}
+
+.project-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-hero h2 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.project-hero > p {
+  font-size: 18px;
+  color: var(--color-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.project-meta-row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.project-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  color: var(--color-secondary);
+}
+
+.project-meta-item > span:last-child {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Cover image */
+.project-cover {
+  padding: 0 48px 80px;
+}
+
+.project-cover img {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 16/7;
+  object-fit: cover;
+}
+
+/* ── Case study sections ── */
+.case-section {
+  padding: 80px 48px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.case-section--tinted {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.case-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.case-heading--spaced {
+  margin-top: 64px;
+}
+
+.case-intro {
+  font-size: 16px;
+  color: var(--color-secondary);
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.case-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+.case-list li {
+  font-size: 15px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.case-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.case-two-col p {
+  font-size: 15px;
+  color: var(--color-secondary);
+  line-height: 1.75;
+}
+
+/* ── Target audience ── */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.audience-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.audience-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  color: var(--color-secondary);
+}
+
+.audience-item > span:last-child {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Pain points */
+.pain-points {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 48px;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.pain-item {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.pain-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pain-item p {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+/* ── SWOT ── */
+.swot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.swot-card {
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.swot-card h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  margin-bottom: 16px;
+}
+
+.swot-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: disc;
+  padding-left: 16px;
+}
+
+.swot-card li {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.5;
+}
+
+/* ── Personas ── */
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.persona-card {
+  display: flex;
+  gap: 20px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+}
+
+.persona-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.persona-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.persona-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.persona-meta {
+  font-size: 13px;
+  color: var(--color-secondary);
+  margin-top: -8px;
+}
+
+.persona-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.persona-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  color: var(--color-secondary);
+}
+
+.persona-detail p {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.55;
+}
+
+/* ── Usability findings ── */
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.finding-card {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finding-number {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  color: var(--color-secondary);
+  opacity: 0.5;
+}
+
+.finding-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.finding-card p {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+/* ── Prototype CTA ── */
+.prototype-btn {
+  margin-top: 24px;
+  display: inline-block;
+}
+
+/* ── Tech implementation grid (shared by front-end project pages) ── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tech-card {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tech-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.tech-card p {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+.tech-card code {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 5px;
+  border-radius: 4px;
+}

@@ -1,0 +1,133 @@
+/* ─────────────────────────────────────────────
+   Graphic design project pages
+   Usage: link AFTER ../../style.css AND ../project.css,
+   BEFORE a project-specific style.css.
+   Shared boilerplate (project-back, project-hero, meta, etc.)
+   lives in project.css — only GD-specific overrides and new
+   components belong here.
+───────────────────────────────────────────── */
+
+/* Slight padding difference for GD hero (less bottom space
+   before the full-bleed poster showcase) */
+.project-hero { padding-bottom: 56px; }
+
+/* Badges wrap on GD pages (longer label text) */
+.project-badges { flex-wrap: wrap; }
+
+/* ── Poster showcase ── */
+.poster-showcase {
+  background: var(--gd-dark, #0e1520);
+  padding: 80px 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.poster-frame {
+  max-width: 480px;
+  width: 100%;
+  filter: drop-shadow(0 32px 64px rgba(0, 0, 0, 0.6));
+}
+
+.poster-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ── Body sections ── */
+.gd-section {
+  padding: 80px 48px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gd-section--tinted {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.gd-section--dark {
+  background: var(--gd-dark, #0e1520);
+  border-top: none;
+}
+
+.gd-intro {
+  font-size: 16px;
+  color: var(--color-secondary);
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+/* Two-column layout */
+.gd-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.gd-two-col p {
+  font-size: 15px;
+  color: var(--color-secondary);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+/* Design decisions */
+.decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.decision-item {
+  border-left: 2px solid rgba(0, 0, 0, 0.12);
+  padding-left: 16px;
+}
+
+.decision-item dt {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.decision-item dd {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.65;
+}
+
+/* Source materials grid */
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.source-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.source-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.source-item span {
+  font-size: 12px;
+  color: var(--color-secondary);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Final poster (dark section, centered, larger) */
+.poster-frame--centered {
+  max-width: 560px;
+  margin: 40px auto 0;
+}
