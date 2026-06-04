@@ -58,3 +58,13 @@
 .reference-item em {
   font-style: italic;
 }
+
+/* ── Responsive — 900px (tablet) ── */
+@media (max-width: 900px) {
+  .reference-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Responsive — 640px (phone) ── */
+@media (max-width: 640px) {
+  .reference-grid { grid-template-columns: repeat(2, 1fr); }
+}

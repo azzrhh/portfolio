@@ -242,3 +242,19 @@
 .ud-play-btn:hover {
   opacity: 0.85;
 }
+
+/* ── Responsive — 900px (tablet) ── */
+@media (max-width: 900px) {
+  .flow-steps      { flex-direction: column; gap: 4px; }
+  .flow-arrow      { padding: 2px 0; margin-top: 0; align-self: center; transform: rotate(90deg); }
+  .scenarios-grid  { grid-template-columns: 1fr; }
+  .illustration-grid { grid-template-columns: repeat(2, 1fr); }
+  .ud-cta          { padding: 64px 28px; }
+}
+
+/* ── Responsive — 640px (phone) ── */
+@media (max-width: 640px) {
+  .scenario-choices  { grid-template-columns: 1fr; }
+  .ud-cta            { padding: 48px 20px; }
+  .ud-cta-inner h2   { font-size: 20px; }
+}

@@ -606,13 +606,14 @@ footer { padding: 40px 0 56px; }
 }
 
 /* ============================================================
-   Responsive — 900 px breakpoint
+   Responsive — 900 px (tablet)
    ============================================================ */
 @media (max-width: 900px) {
   :root { --pad: 28px; }
 
-  .navlinks { gap: 20px; }
-  .navlinks a:not(.btn-sm) { display: none; }
+  .navlinks { gap: 16px; font-size: 15px; }
+
+  .nav-inner { height: 72px; }
 
   .hero-stage {
     grid-template-columns: 1fr;
@@ -648,5 +649,45 @@ footer { padding: 40px 0 56px; }
   .about-hero { padding: 48px 28px 36px; }
   .about-skills { padding: 48px 28px; }
   .about-education { padding: 48px 28px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   Responsive — 640 px (phone)
+   ============================================================ */
+@media (max-width: 640px) {
+  :root { --pad: 20px; }
+
+  /* Nav */
+  .nav-inner { height: 60px; }
+  .brand { font-size: 19px; }
+  .navlinks { gap: 12px; }
+  .navlinks a:not(.btn-sm) { display: none; }
+  .navlinks .btn-sm { padding: 8px 16px; font-size: 14px; }
+
+  /* Hero */
+  .hero { padding-top: 16px; padding-bottom: 40px; }
+  .meta-rule { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ctas { flex-direction: column; align-items: stretch; }
+  .ctas .btn { text-align: center; justify-content: center; }
+
+  /* Work grid — already 1-col at 900px, stays 1-col */
+  .card .meta .t { font-size: 20px; }
+
+  /* Contact panel */
+  .contact { margin: 0 16px 16px; border-radius: 16px; }
+  .contact-inner { padding: 40px 20px; }
+  .contact h2 { margin-bottom: 20px; }
+  .contact .row { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .contact .btn-light { width: 100%; text-align: center; justify-content: center; }
+
+  /* Footer */
+  .foot-inner { gap: 12px; }
+
+  /* About */
+  .about-hero { padding: 32px 20px 28px; }
+  .about-skills { padding: 32px 20px; }
+  .about-education { padding: 32px 20px; }
   .skills-grid { grid-template-columns: 1fr; }
+  .education-item { flex-direction: column; gap: 4px; }
 }

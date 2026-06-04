@@ -172,3 +172,16 @@
   width: 100%;
   display: block;
 }
+
+/* ── Responsive — 900px (tablet) ── */
+@media (max-width: 900px) {
+  .comp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Responsive — 640px (phone) ── */
+@media (max-width: 640px) {
+  .insights-grid { grid-template-columns: 1fr; }
+  .comp-grid     { grid-template-columns: 1fr; }
+  .ia-item       { flex-direction: column; gap: 6px; }
+  .ia-item h4    { width: auto; }
+}
